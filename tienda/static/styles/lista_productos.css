@@ -1,0 +1,121 @@
+body {
+    background: rgb(255, 255, 255);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.container {
+    background-color: rgb(3, 79, 109);
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5em; /* Reducir tamaño de fuente */
+}
+
+.tabla-container {
+    max-height: 400px; /* Ajusta esta altura según tus necesidades */
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar{
+    height: auto;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(255, 255, 255)
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(30, 109, 139);
+}
+
+th, td {
+    border: 1px solid rgba(3, 79, 109, 1);
+    padding: 10px;
+    text-align: left;
+    color: white;
+    font-size: 0.9em; /* Reducir tamaño de fuente */
+}
+
+th {
+    background-color: rgba(3, 79, 109, 1);
+}
+
+.btn-warning, .btn-danger {
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em; /* Reducir tamaño de fuente */
+}
+
+.btn-warning {
+    background-color: #f0af4e;
+    margin-bottom: 5px;
+}
+
+.btn-warning:hover {
+    background-color: #ec8c1f;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-primary {
+    background-color: rgba(3, 79, 109, 1);
+    border: none;
+    padding: 8px 16px; /* Reducir padding */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+    font-size: 0.9em; /* Reducir tamaño de fuente */
+}
+
+.btn-primary:hover {
+    background-color: rgba(3, 79, 109, 0.9);
+}
+
+#no_sub {
+    color: white;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: rgba(3, 79, 109, 0);
+    transition: all 0.3s ease-in-out;
+}

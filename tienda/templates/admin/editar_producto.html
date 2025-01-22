@@ -1,0 +1,32 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Editar Producto
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/editar_productos.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Editar Producto</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="datos">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="botones">
+            <button type="submit" class="btn-primary">Guardar Cambios</button>
+            <a id="no_sub" href="{% url 'lista_productos' %}">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

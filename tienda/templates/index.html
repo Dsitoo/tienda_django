@@ -1,0 +1,66 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+{% block titulo %} Index {% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/indexx.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="superior">
+    <h1 class="nombre">Electronics Ya</h1>
+    <ul>
+        <li class="inicioSe">
+            <a href="{% url 'login' %}" class="no_sub">Iniciar Sesión</a>
+        </li>
+    </ul>
+</div>
+
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        {% if productos|length < 3 %}
+            {% for producto in productos %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ producto.imagen1.url }}" class="img-carrusel" alt="...">
+            </div>
+            {% endfor %}
+        {% else %}
+            {% for producto in productos|slice:":3" %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ producto.imagen1.url }}" class="img-carrusel" alt="...">
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>  
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="info-tienda-online">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio vitae omnis, quisquam numquam dolores voluptas nisi repellendus officiis alias reprehenderit laudantium quidem distinctio quae id exercitationem et adipisci tenetur rem itaque cumque esse hic. Ipsam quaerat voluptatibus repellat sed fuga distinctio praesentium reprehenderit a recusandae, reiciendis, nemo natus placeat ullam.</p>
+</div>
+
+<div class="inferior">
+    <div class="encuentranos">
+        <p><strong>Electronics Ya</strong></p>
+        <p>Dirección: Calle Falsa 123, Bogotá, Colombia</p>
+    </div>
+    <div class="contactanos">
+        <p><strong>Contáctanos</strong></p>
+        <p>Teléfono fijo: 555-1234</p>
+        <p>Celular: 300-123-4567</p>
+        <p>Email: info@electronicsya.com</p>
+    </div>
+</div>
+{% endblock %}

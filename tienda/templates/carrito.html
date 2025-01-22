@@ -1,0 +1,101 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Carrito de Compras
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/carrito.css' %}">
+{% endblock %}
+
+{% block body %}
+
+
+<nav class="superior">
+    <ul class="menu_superior">
+        {% if user.is_staff %}
+        <li class="a_superior">
+            <a href="{% url 'aggproducto' %}" class="aggpro" id="no_sub">Agregar Productos</a>
+        </li>
+        <li class="a_superior">
+            <a href="{% url 'lista_productos' %}" class="aggpro" id="no_sub">Lista de Productos</a>
+        </li>
+        {% endif %}
+    </ul>
+    <ul class="menu_superior2">
+        <li class="a_superior">
+            <a href="" class="pedidos" id="no_sub">Mis Pedidos</a>
+        </li>
+        <li class="a_superior">
+            <a href="{% url 'carrito' %}" class="carro" id="no_sub">
+                <i class="bi bi-cart"></i>
+            </a>
+        </li>
+        <li class="a_superior perfil"> 
+            <a href="#" id="" class="perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ user.foto_perfil.url }}" alt="Foto de perfil" class="avatar">
+            </a>
+            <ul class="dropdown-menu">
+                <li> {{ user.username }} </li>
+                <li><a href="{% url 'editar_perfil' %}" class="dropdown-item">Ajustes de perfil</a></li>
+                <li><a href="{% url 'cerrar_se' %}" class="dropdown-item">Cerrar sesión</a></li>
+                
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h1>Tu Carrito</h1>
+
+{% if productos_en_carrito %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in productos_en_carrito %}
+                    <tr>
+                        <td>{{ item.producto.nombre }}</td>
+                        <td>
+                            <input type="number" name="cantidad_{{ item.id }}" value="{{ item.cantidad }}" min="1" max="{{ item.producto.cantidad }}" required>
+                        </td>
+                        <td>${{ item.producto.precio }}</td>
+                        <td>${{ item.total }}</td>
+                        <td>
+                            <a class="btn-danger" href="{% url 'eliminar_del_carrito' item.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="total">
+            <p>Total del carrito: ${{ total_carrito }}</p>
+        </div>
+        
+        <<div class="botones">
+            <button type="submit" class="btn-primary" id="no_sub">Actualizar Carrito</button>
+            <a id="no_sub" href="{% url 'catalogo' %}">Catálogo</a>
+            <button type="submit" class="btn-primary" id="no_sub" name="comprar">Comprar</button>
+        </div>
+        
+    </form>
+{% else %}
+    <p>Tu carrito está vacío.</p>
+    <div class="botones">
+        <a id="no_sub" href="{% url 'catalogo' %}">Catalogo</a>
+    </div>
+{% endif %}
+</div>
+
+{% endblock %}

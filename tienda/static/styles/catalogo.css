@@ -1,0 +1,207 @@
+body{
+    background-color: rgb(196, 195, 195); 
+    margin: 0px;
+    padding: 0px;
+    background-image: url(../img/Fondos_css/fondo_catalogo.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(3, 79, 109);
+    padding: 10px;
+}
+
+.menu_superior{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    right: 5px;
+}
+
+.a_superior {
+    right: 25px;
+    top: 20px;
+    margin-right: 15px;
+    justify-content: center;
+    list-style-type: none;
+    font-weight: bold;
+}
+
+#no_sub{
+    color: white;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: rgba(3, 79, 109, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+#no_sub:hover{
+    background-color: rgba(3, 79, 109, 0.7);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.aggpro{
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.aggpro:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.pedidos{
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.carro{
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+.carro:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; 
+    color: #333; 
+    display: block;
+    margin: 0 auto;
+    margin-left: 5px;
+}
+
+.perfil {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.dropdown-menu {
+    min-width: 200px; 
+    right: 0; 
+    margin-top: 5px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.451);
+    border-radius: 10px;
+}
+.product-item {
+    border: 2px solid #a6d1a6;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-icon {
+    font-size: 24px;
+    margin-left: 500px;
+    color: black;
+}
+
+.producto-card {
+    border-radius: 10px;
+    width: 250px; 
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-sizing: border-box; 
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.producto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.2);
+    
+}
+  
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nombrepro{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.preciopro{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.ver-producto-btn {
+    background-color: rgb(3, 79, 109);
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: all ; 
+}
+
+.ver-producto-btn:hover {
+    background-color: rgb(26, 72, 90);
+    color: white;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}

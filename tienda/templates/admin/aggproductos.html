@@ -1,0 +1,33 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Agregar Productos
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/aggproductos.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center">Agregar Productos</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        <div class="datos">
+            {% csrf_token %}
+                {% for field in form_P %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="botones">
+            <a href="{% url 'lista_productos' %}" class="btn btn-primary" id="no_sub">Productos</a>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+            <a href="{% url 'catalogo' %}" class="btn btn-primary" id="no_sub">Catalogo</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Productos Electrónicos
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/catalogo.css' %}">
+{% endblock %}
+
+{% block body %}
+<nav class="superior">
+    <ul class="menu_superior">
+        {% if user.is_staff %}
+        <li class="a_superior">
+            <a href="{% url 'aggproducto' %}" class="aggpro" id="no_sub">Agregar Productos</a>
+        </li>
+        <li class="a_superior">
+            <a href="{% url 'lista_productos' %}" class="aggpro" id="no_sub">Lista de Productos</a>
+        </li>
+        <li class="a_superior">
+            <a href="{% url 'lista_usuarios' %}" class="aggpro" id="no_sub">Lista Usuarios</a>
+        </li>
+        {% endif %}
+    </ul>
+    <ul class="menu_superior2">
+        <li class="a_superior">
+            <a href="{% url 'mis_pedidos' %}" class="pedidos" id="no_sub">Mis Pedidos</a>
+        </li>
+        <li class="a_superior">
+            <a href="{% url 'carrito' %}" class="carro" id="no_sub">
+                <i class="bi bi-cart"></i>
+            </a>
+        </li>
+        <li class="a_superior perfil"> <!-- Añade la clase perfil aquí -->
+            <a href="#" id="" class="perfil" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{ user.foto_perfil.url }}" alt="Foto de perfil" class="avatar">
+            </a>
+            <ul class="dropdown-menu">
+                <li> {{ user.username }} </li>
+                <li><a href="{% url 'editar_perfil' %}" class="dropdown-item">Ajustes de perfil</a></li>
+                <li><a href="{% url 'cerrar_se' %}" class="dropdown-item">Cerrar sesión</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="product-grid">
+    {% for producto in productos %}
+        {% if producto.id_producto %}
+            <div class="producto-card">
+                <img src="{{ producto.imagen1.url }}" alt="{{ producto.nombre }}" class="producto-imagen">
+                <div class="producto-info">
+                    <p class="nombrepro">{{ producto.nombre }}</p>
+                    <p class="preciopro">Precio: ${{ producto.precio }}</p>
+                    <p class="cantidadpro">Cantidad: {{ producto.cantidad }}</p>
+                </div>
+                <a href="{% url 'detalle_producto' producto.id_producto %}" class="ver-producto-btn">Ver Producto</a>
+            </div>
+        {% else %}
+            <p>Error: Producto sin ID</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

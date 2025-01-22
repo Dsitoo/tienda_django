@@ -1,0 +1,99 @@
+body{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/Fondos_css/fondo_inicio.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.cardR-titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: black;
+    height: 100px;
+}
+
+.container_R{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    width: 45%;
+    height: 644px;
+    padding: 0;
+}
+
+.cardR-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.inputR{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    height: 27px;
+    padding-bottom: 12px;
+    background-color: rgba(245, 245, 245, 0.1);
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    align-items: center;
+    border: none;
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+    flex-direction: column;
+}
+
+.btnR{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: auto;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.btnR:hover{
+    background-color: rgb(3, 79, 109);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+}
+
+.container_M{
+    background-color: rgba(0, 0, 0, 0.61);
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}

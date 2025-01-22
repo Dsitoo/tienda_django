@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Mis Pedidos
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/mis_pedidos.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Mis Pedidos</h1>
+    {% if pedidos %}
+        {% for pedido in pedidos %}
+            <h2>Pedido realizado el {{ pedido.fecha }}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pedido_producto in pedido.pedidoproducto_set.all %}
+                        <tr>
+                            <td>{{ pedido_producto.producto.nombre }}</td>
+                            <td>{{ pedido_producto.cantidad }}</td>
+                            <td>${{ pedido_producto.producto.precio }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="total">
+                <strong>Total: ${{ pedido.total }}</strong>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No has realizado ningún pedido.</p>
+    {% endif %}
+</div>
+{% endblock %}

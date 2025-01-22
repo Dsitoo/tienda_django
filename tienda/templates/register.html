@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Registro
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/registere.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container_R">
+    <div class="cardR">
+        
+        <h3 class="cardR-titulo">Registro</h3>
+         
+        <div class="cardR-body">
+            <form method="POST" action="">
+                {% csrf_token %}
+                            {{ form_R }}
+                <div class="boton">
+                    <button type="submit" class="btnR">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container_M"></div>
+
+{% endblock %}

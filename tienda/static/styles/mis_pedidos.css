@@ -1,0 +1,119 @@
+/* Continuación de los estilos previos */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(30, 109, 139);
+    margin-top: 20px;
+  }
+  
+  th,
+  td {
+    border: 1px solid rgba(3, 79, 109, 1);
+    padding: 10px;
+    text-align: left;
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  th {
+    background-color: rgba(3, 79, 109, 1);
+    font-weight: bold;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: rgb(25, 92, 121);
+  }
+  
+  tbody tr:hover {
+    background-color: rgba(3, 79, 109, 0.5);
+  }
+  
+  h2 {
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    margin-top: 20px;
+  }
+  
+  .container {
+    background-color: rgb(3, 79, 109);
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  /* Estilos para botones de acción (si es necesario más tarde) */
+  .btn-primary {
+    background-color: rgba(3, 79, 109, 1);
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+    font-size: 0.9em;
+  }
+  
+  .btn-primary:hover {
+    background-color: rgba(3, 79, 109, 0.9);
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c9302c;
+  }
+  
+  /* Estilos adicionales para mejorar la visibilidad */
+  .total {
+    font-weight: bold;
+    text-align: right;
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
+  .botones {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+/* Total al final de cada pedido */
+.total {
+    font-weight: bold;
+    text-align: right;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+    

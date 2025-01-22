@@ -1,0 +1,52 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+    Lista de Productos
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/lista_productos.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Lista de Productos</h2>
+        <div class="tabla-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in productos %}
+                        <tr>
+                            <td>{{ producto.id_producto }}</td>
+                            <td>{{ producto.nombre }}</td>
+                            <td>{{ producto.descripcion }}</td>
+                            <td>${{ producto.precio }}</td>
+                            <td>{{ producto.cantidad }}</td>
+                            <td>
+                                <!-- Botón de Editar -->
+                                <a href="{% url 'editar_producto' producto.id_producto %}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <!-- Botón de Eliminar -->
+                                <a href="{% url 'eliminar_producto' producto.id_producto %}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');"><i class="bi bi-trash3"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="botones">
+            <a href="{% url 'aggproducto' %}" class="btn btn-primary" id="no_sub">Agregar Productos</a>
+            <a href="{% url 'catalogo' %}" class="btn btn-primary" id="no_sub">Catalogo</a>
+        </div>
+    </div>
+{% endblock %}
