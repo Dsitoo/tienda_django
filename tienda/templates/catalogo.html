@@ -13,6 +13,9 @@ Productos Electrónicos
 {% block body %}
 <nav class="superior">
     <ul class="menu_superior">
+        <li>
+            <a href="#" class="home" id="no_sub">Logo</a>
+        </li>
         {% if user.is_staff %}
         <li class="a_superior">
             <a href="{% url 'aggproducto' %}" class="aggpro" id="no_sub">Agregar Productos</a>

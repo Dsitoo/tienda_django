@@ -1,32 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lista de Usuarios</title>
-</head>
-<body>
-    <h1>Lista de Usuarios</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for usuario in usuarios %}
-            <tr>
-                <td>{{ usuario.id }}</td>
-                <td>{{ usuario.username }}</td>
-                <td>{{ usuario.email }}</td>
-                <td>
-                    
-                    <a href="{% url 'eliminar_usuario' usuario.id %}">Eliminar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Lista de Usuarios
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/lista_usuarios.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Lista de Usuarios</h1>
+        <div class="tabla-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.id }}</td>
+                        <td>{{ usuario.username }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>
+                            <a href="{% url 'eliminar_usuario' usuario.id %}" class="btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="botones">
+            <a href="{% url 'catalogo' %}" class="btn btn-primary" id="no_sub">Catalogo</a>
+        </div>
+    </div>
+{% endblock %}
