@@ -51,6 +51,23 @@
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio vitae omnis, quisquam numquam dolores voluptas nisi repellendus officiis alias reprehenderit laudantium quidem distinctio quae id exercitationem et adipisci tenetur rem itaque cumque esse hic. Ipsam quaerat voluptatibus repellat sed fuga distinctio praesentium reprehenderit a recusandae, reiciendis, nemo natus placeat ullam.</p>
 </div>
 
+<div class="product-grid">
+    {% for producto in productos %}
+        {% if producto.id_producto %}
+            <div class="producto-card">
+                <img src="{{ producto.imagen1.url }}" alt="{{ producto.nombre }}" class="producto-imagen">
+                <div class="producto-info">
+                    <p class="nombrepro">{{ producto.nombre }}</p>
+                    <p class="preciopro">Precio: ${{ producto.precio }}</p>
+                    <p class="cantidadpro">Cantidad: {{ producto.cantidad }}</p>
+                </div>
+            </div>
+        {% else %}
+            <p>Error: Producto sin ID</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
 <div class="inferior">
     <div class="encuentranos">
         <p><strong>Electronics Ya</strong></p>

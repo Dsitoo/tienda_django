@@ -65,6 +65,71 @@ ul {
     margin-bottom: 20px;
 }
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.451);
+    border-radius: 10px;
+}
+.product-item {
+    border: 2px solid #a6d1a6;
+    padding: 10px;
+    text-align: center;
+}
+
+.cart-icon {
+    font-size: 24px;
+    margin-left: 500px;
+    color: black;
+}
+
+.producto-card {
+    border-radius: 10px;
+    width: 250px; 
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-sizing: border-box; 
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.producto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.2);
+    
+}
+  
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nombrepro{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.preciopro{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
 .inferior {
     background-color: rgba(3, 79, 109, 0.9);
     padding: 20px;
